@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import React, { useState} from "react";
+import React, { useState } from "react";
 import {
   SafeAreaView,
   ScrollView,
@@ -12,10 +12,9 @@ import {
   Dimensions,
 } from "react-native";
 
-
 const { width } = Dimensions.get("window");
 import { user_login } from "../../api/user_api";
-import  Eye from "../../asset/Eye.png";
+import Eye from "../../asset/Eye.png";
 import EyeActive from "../../asset/EyeActive.png";
 
 export default function Mylogin({ navigation }) {
@@ -73,9 +72,9 @@ export default function Mylogin({ navigation }) {
           console.log(result);
           if (result.status == 200) {
             AsyncStorage.setItem("AccessToken", result.data.token);
-            setEmail("")
-    setPassword("")
-            navigation.navigate('Regester')
+            setEmail("");
+            setPassword("");
+            navigation.navigate("Regester");
           }
         })
         .catch((err) => {
@@ -84,9 +83,8 @@ export default function Mylogin({ navigation }) {
     } else {
       alert(checkPassowrd);
     }
-    
   };
-  const handleCustomer=()=>{
+  const handleCustomer = () => {
     const checkPassowrd = checkPasswordValidity(password);
     if (!checkPassowrd) {
       user_login({
@@ -97,9 +95,9 @@ export default function Mylogin({ navigation }) {
           console.log(result);
           if (result.status == 200) {
             AsyncStorage.setItem("AccessToken", result.data.token);
-            setEmail("")
-    setPassword("")
-            navigation.navigate('Firstpage')
+            setEmail("");
+            setPassword("");
+            navigation.navigate("Firstpage");
           }
         })
         .catch((err) => {
@@ -109,9 +107,9 @@ export default function Mylogin({ navigation }) {
       alert(checkPassowrd);
     }
   };
-const handleError=()=>{
-  console.log("error");
-}  ;
+  const handleError = () => {
+    console.log("error");
+  };
 
   return (
     <SafeAreaView style={styles.saveAreaViewContainer}>
@@ -135,7 +133,7 @@ const handleError=()=>{
               fontFamily: "Inter, sans-serif",
               letterSpacing: 2,
               marginTop: 10,
-              marginBottom:30,
+              marginBottom: 30,
             }}
           >
             Welcome to the Forte Rate Calculation Portal
@@ -147,22 +145,22 @@ const handleError=()=>{
               color: "#rgb(207,208,209)",
               fontSize: 12,
               letterSpacing: 1,
-              marginTop:8,
-              textAlign:'center',
-              marginBottom:50,
+              marginTop: 8,
+              textAlign: "center",
+              marginBottom: 50,
             }}
           >
             You may Sign in by using the credential provided to you by Forte{" "}
           </Text>
           <Text style={styles.emailText}>Email or Username</Text>
           <View style={styles.wrapperInput}>
-          <TextInput
-            style={styles.input}
-            placeholder="Email"
-            keyboardType='default'
-            value={email}
-            onChangeText={(text) => setEmail(text)}
-          />
+            <TextInput
+              style={styles.input}
+              placeholder="Email"
+              keyboardType="default"
+              value={email}
+              onChangeText={(text) => setEmail(text)}
+            />
           </View>
 
           {checkValidEmail ? (
@@ -170,30 +168,29 @@ const handleError=()=>{
           ) : (
             <Text style={styles.textFailed}> </Text>
           )}
-<Text style={styles.emailText}>Password</Text>
+          <Text style={styles.emailText}>Password</Text>
 
-<View style={styles.wrapperInput}>
-
-          <TextInput
-            style={styles.input}
-            placeholder="Password"
-            value={password}
-            secureTextEntry={seePassword}
-            onChangeText={(text) => setPassword(text)}
-            
-          />
-          <TouchableOpacity style={styles.wrapperIcon}
-            
-            onPress={() => setSeePassword(!seePassword)}> 
-            <Image source={seePassword ? Eye : EyeActive} style={styles.icon}  />
-          </TouchableOpacity>
-          
+          <View style={styles.wrapperInput}>
+            <TextInput
+              style={styles.input}
+              placeholder="Password"
+              value={password}
+              secureTextEntry={seePassword}
+              onChangeText={(text) => setPassword(text)}
+            />
+            <TouchableOpacity
+              style={styles.wrapperIcon}
+              onPress={() => setSeePassword(!seePassword)}
+            >
+              <Image
+                source={seePassword ? Eye : EyeActive}
+                style={styles.icon}
+              />
+            </TouchableOpacity>
           </View>
-         <TouchableOpacity   style={styles.button} onPress={handleLogin}>
-                <Text style={styles.text}>Login</Text>
-              </TouchableOpacity>
-            
-          
+          <TouchableOpacity style={styles.button} onPress={handleLogin}>
+            <Text style={styles.text}>Login</Text>
+          </TouchableOpacity>
         </ScrollView>
       </View>
     </SafeAreaView>
@@ -207,23 +204,21 @@ const styles = StyleSheet.create({
     //justifyContent:'space-between',
   },
 
-
   wrapperInput: {
     borderWidth: 1,
     borderRadius: 8,
-    borderColor: '#134C3E',
+    borderColor: "#134C3E",
     marginTop: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
-    margin:10        
+    flexDirection: "row",
+    alignItems: "center",
+    margin: 10,
   },
   input: {
     padding: 10,
-    width: '85%',
-    
+    width: "85%",
   },
   wrapperIcon: {
-    position: 'absolute',
+    position: "absolute",
     right: 0,
     padding: 10,
   },
@@ -232,25 +227,20 @@ const styles = StyleSheet.create({
     height: 20,
   },
 
-  
   emailText: {
-    
-  
-    lineHeight:20,
-    color: '#245C52',
-    fontSize:18,
-    fontStyle:'normal',
-    fontFamily:'Larsseit',
-    letterSpacing:0.05,
-    top:10,
-    width:170,
-    height:33,
-    left:40,
-  textAlign:'left',
-  alignSelf:'flex-start',
-  fontWeight:'bold',
-  
-  
+    lineHeight: 20,
+    color: "#245C52",
+    fontSize: 18,
+    fontStyle: "normal",
+    fontFamily: "Larsseit",
+    letterSpacing: 0.05,
+    top: 10,
+    width: 170,
+    height: 33,
+    left: 40,
+    textAlign: "left",
+    alignSelf: "flex-start",
+    fontWeight: "bold",
   },
   MTextInput: {
     borderWidth: 1,
@@ -276,7 +266,7 @@ const styles = StyleSheet.create({
   //   textAlign:'left',
   //   alignSelf:'flex-start',
   //   left:40,
-  
+
   // },
   PTextInput: {
     borderWidth: 1,
@@ -288,15 +278,14 @@ const styles = StyleSheet.create({
     letterSpacing: 2,
     marginTop: 20,
   },
-  
- 
+
   button: {
     padding: 15,
-    paddingLeft:30,
-    paddingRight:30,
+    paddingLeft: 30,
+    paddingRight: 30,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor:"#134C3E",
+    backgroundColor: "#134C3E",
     borderRadius: 5,
     marginTop: 45,
   },
@@ -311,8 +300,8 @@ const styles = StyleSheet.create({
   text: {
     color: "white",
     fontWeight: "700",
-    textAlign:"center",
-    fontSize:20,
+    textAlign: "center",
+    fontSize: 20,
   },
   textFailed: {
     alignSelf: "flex-end",
@@ -327,9 +316,9 @@ const styles = StyleSheet.create({
     paddingVertical: "10%",
     paddingBottom: "50%",
   },
-  image:{
-    marginTop:60,
-    alignItems:"center",
-    marginBottom:50,
-  }
+  image: {
+    marginTop: 60,
+    alignItems: "center",
+    marginBottom: 50,
+  },
 });
