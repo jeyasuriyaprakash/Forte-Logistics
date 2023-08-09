@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "Forteapp",
+    "slug": "forteapp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./asset/forte-app-icon-1.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./asset/spla1.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.jeyaprakash007.forteapp"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./asset/forte-app-icon-1.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.jeyaprakash007.forteapp",
+      "googleServicesFile": "./google-services.json"
+    
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9c8b28c2-8720-4d30-8f93-5f7b6fecb0f0"
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "138504246880",
+    "project_id": "myforte-ec882",
+    "storage_bucket": "myforte-ec882.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:138504246880:android:9e5527abf8b61d24235505",
+        "android_client_info": {
+          "package_name": "com.jeyaprakash007.forteapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "138504246880-h8cr7tht460a3m3o4kms5rcdfu2ss3e0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEIk0GhBvWArqC0h1FB1pEukur7mJicAo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "138504246880-h8cr7tht460a3m3o4kms5rcdfu2ss3e0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
